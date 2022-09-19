@@ -5,4 +5,5 @@
     <string name="loginText">Login</string>
     <string name="passwordText">Password</string>
     <string name="loginHint">login name</string>
+    <string name="switchText">What does this do?</string>
 </resources>
