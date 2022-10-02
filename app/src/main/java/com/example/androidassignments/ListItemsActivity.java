@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -87,7 +88,7 @@ public final class ListItemsActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(ListItemsActivity.this, string, Toast.LENGTH_SHORT);
         toast.show();
     }
-    /*
+
     protected void onActivityResult(int requestCode, int responseCode, Intent data) {
         super.onActivityResult(requestCode, responseCode, data);
         if (requestCode == 10 && responseCode == RESULT_OK) {
@@ -102,7 +103,7 @@ public final class ListItemsActivity extends AppCompatActivity {
             Log.i(ACTIVITY_NAME, "Returned to MainActivity.onActivityResult");
         }
     }
-     */
+
     protected void onResume() {
         super.onResume();
         Log.i(ACTIVITY_NAME, "In onResume()");
