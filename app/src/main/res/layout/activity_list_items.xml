@@ -12,14 +12,18 @@
 
     <RadioButton android:text="@string/radiobutton" />
 
-    <CheckBox android:text="@string/checkbox" />
+    <CheckBox
+        android:id="@+id/myCheck"
+        android:text="@string/checkbox" />
 
     <Switch
+        android:id="@+id/mySwitch"
         android:minHeight="48dp"
         android:text="@string/switchText"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-    <ImageButton android:src="@android:drawable/ic_menu_camera"
-        android:contentDescription="@string/todo">
-    </ImageButton>
+    <ImageButton
+        android:id="@+id/camera"
+        android:contentDescription="@string/todo"
+        android:src="@android:drawable/ic_menu_camera" />
 </GridLayout>

@@ -32,18 +32,21 @@ public final class LoginActivity extends AppCompatActivity {
 
         sp = getSharedPreferences("UserPref", Context.MODE_PRIVATE);
 
-        button.setOnClickListener(view -> {
-            nameStr = name.getText().toString();
-            passStr = password.getText().toString();
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                nameStr = name.getText().toString();
+                passStr = password.getText().toString();
 
-            SharedPreferences.Editor editor = sp.edit();
+                SharedPreferences.Editor editor = sp.edit();
 
-            editor.putString("name", nameStr);
-            editor.putString("password", passStr);
-            editor.apply();
+                editor.putString("name", nameStr);
+                editor.putString("password", passStr);
+                editor.apply();
 
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
         });
     }
 
