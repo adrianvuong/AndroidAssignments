@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Assignment 1</string>
+    <string name="hello_message">Hello World!</string>
+    <string name="buttonText">I\'m a Button</string>
+    <string name="loginText">login name</string>
+    <string name="passwordText">Password</string>
+    <string name="loginHint">login name</string>
+    <string name="switchText">What does this do?</string>
+    <string name="loginButton">Log In</string>
+    <string name="todo">TODO</string>
+    <string name="radiobutton">RadioButton</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="dialog_title">Finished?</string>
+    <string name="toast_on">Switch is on</string>
+    <string name="toast_off">Switch is off</string>
+</resources>
