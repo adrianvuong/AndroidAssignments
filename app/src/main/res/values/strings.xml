@@ -13,4 +13,7 @@
     <string name="dialog_title">Finished?</string>
     <string name="toast_on">Switch is on</string>
     <string name="toast_off">Switch is off</string>
+    <string name="chatButton">Start Chat</string>
+    <string name="sendButton">Send</string>
+    <string name="chatText">Enter Text</string>
 </resources>

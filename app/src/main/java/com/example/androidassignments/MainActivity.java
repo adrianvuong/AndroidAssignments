@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 
 public final class MainActivity extends AppCompatActivity {
 
-    Button button;
+    Button button, button2;
     private static final String ACTIVITY_NAME = "MainActivity";
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,12 +25,20 @@ public final class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button = findViewById(R.id.button);
+        button2 = findViewById(R.id.button2);
 
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(MainActivity.this, ListItemsActivity.class);
                 startActivityForResult(intent, 10);
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
             }
         });
     }
