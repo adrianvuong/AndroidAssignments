@@ -2,8 +2,6 @@ package com.example.androidassignments;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,13 +9,13 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import kotlin.Metadata;
+
 import org.jetbrains.annotations.Nullable;
 
 
 public final class MainActivity extends AppCompatActivity {
 
-    Button button, button2;
+    Button button, button2, button3;
     private static final String ACTIVITY_NAME = "MainActivity";
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +24,7 @@ public final class MainActivity extends AppCompatActivity {
 
         button = findViewById(R.id.button);
         button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
 
         button.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -42,6 +41,14 @@ public final class MainActivity extends AppCompatActivity {
                 Log.i(ACTIVITY_NAME, "User clicked Start Chat");
                 Intent intent = new Intent(MainActivity.this, ChatWindow.class);
                 startActivityForResult(intent, 10);
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, TestToolbar.class);
+                startActivity(intent);
             }
         });
     }
