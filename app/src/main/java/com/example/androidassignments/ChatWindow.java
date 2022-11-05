@@ -3,6 +3,7 @@ package com.example.androidassignments;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,8 @@ public class ChatWindow extends AppCompatActivity {
     EditText editText;
     Button button;
     ArrayList<String> strings;
+    ChatDatabaseHelper dbh;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +38,22 @@ public class ChatWindow extends AppCompatActivity {
         ChatAdapter messageAdapter = new ChatAdapter(this);
         listView.setAdapter(messageAdapter);
 
+        dbh = new ChatDatabaseHelper(this);
+        db = dbh.getWritableDatabase();
+        String query = "";
+        //db.query();
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                strings.add(editText.getText().toString());
+                String msg = editText.getText().toString();
+                strings.add(msg);
                 messageAdapter.notifyDataSetChanged();
                 editText.setText("");
             }
         });
+
+
 
 
 
@@ -64,7 +75,7 @@ public class ChatWindow extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent){
             LayoutInflater inflater = ChatWindow.this.getLayoutInflater();
 
-            View result = null;
+            View result;
 
             if(position%2==0){
                 result = inflater.inflate(R.layout.chat_row_incoming, null);
@@ -72,7 +83,7 @@ public class ChatWindow extends AppCompatActivity {
             else{
                 result = inflater.inflate(R.layout.chat_row_outgoing, null);
             }
-            TextView message = (TextView) result.findViewById(R.id.message_text);
+            TextView message = result.findViewById(R.id.message_text);
             message.setText(getItem(position));
 
             return result;
