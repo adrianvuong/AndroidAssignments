@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
@@ -17,6 +18,13 @@
         android:theme="@style/Theme.AndroidAssignments"
         tools:targetApi="31">
         <activity
+            android:name=".WeatherForecast"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ChatWindow"
             android:exported="false"
             android:parentActivityName=".LoginActivity">
@@ -27,7 +35,7 @@
         <activity
             android:name=".ListItemsActivity"
             android:exported="true"
-            android:parentActivityName=".LoginActivity"/>
+            android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -40,7 +48,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:parentActivityName=".LoginActivity"/>
+            android:parentActivityName=".LoginActivity" />
     </application>
 
 </manifest>
